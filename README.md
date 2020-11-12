@@ -10,3 +10,5 @@ El problema de las ocho reinas tiene 92 soluciones, de las cuales 12 son esencia
 
 ### Lo verás desplegado así.
 
+
+https://github.com/santbetv/Juego-Enigma-de-las-ocho-reinas_Java-EE/issues/1#issue-741279775
