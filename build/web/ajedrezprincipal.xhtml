@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+    <h:head>
+        <title>Ajedrez Movimento de Ficha Reina</title>
+    </h:head>
+    <h:body>
+
+        <p:growl id="panelErrores"/>
+
+        <h:form>
+            <p:panelGrid columns="2">
+
+                <p:panel header="Panel principal tablero 8 x 8 - By Santiago Betancur" style="width: 900px" id="panelPrincipal">
+
+                    <c:forEach var="fila" begin="1" end="8">
+                        <c:forEach var="columna" begin="1" end="8">
+                            <p:commandButton value="  " 
+                                             style="#{controladorAjedrez.pintarPosicion(fila, columna)} "
+                                             action="#{controladorAjedrez.posicionarFicha(fila, columna)}"
+                                             update="panelPrincipal,panelErrores"
+                                             />
+                        </c:forEach>
+                    </c:forEach>
+                    
+                    <p:commandButton action="#{controladorAjedrez.limpiarPosiciones()}" value="Reset" update="panelPrincipal"/>
+                </p:panel>
+                <div>
+                    <li>El problema de las ocho reinas es un pasatiempo que consiste en poner ocho reinas en el tablero de ajedrez sin que se amenacen. Fue propuesto por el ajedrecista alemán Max Bezzel en 1848. En el juego del ajedrez la reina amenaza a aquellas piezas que se encuentren en su misma fila, columna o diagonal.</li>
+
+                    <li>El problema de las ocho reinas tiene 92 soluciones, de las cuales 12 son esencialmente distintas, es decir las 92 soluciones existentes se pueden obtener a partir de traslaciones, simetrías y rotaciones de las 12 soluciones únicas.</li>
+                    <br/>
+                    <li><a href="https://www.lavanguardia.com/deportes/otros-deportes/20170906/431089708625/ocho-reinas-ajedrez-millon-dolares.html">Mira una solución</a></li>
+                    <br/>
+                    <li>¿Y tú, ya sabes la respuesta?</li>
+                </div>
+            </p:panelGrid>
+            <p:separator/>
+            
+            © 2020 Developer - Todos los Derechos Reservados.
+        </h:form>
+    </h:body>
+</html>
+
